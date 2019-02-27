@@ -3,4 +3,4 @@ services:
 before_install:
   - docker pull themegatb/pandoc-latex:0.1
 script:
-  - docker run --rm -v $(pwd):/project themegatb/pandoc-latex:0.1 build
+  - docker run --rm -v $(pwd):/project themegatb/pandoc-latex build
