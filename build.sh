@@ -4,21 +4,31 @@ watch() {
 }
 
 build() {
-    pandoc src/main.md  \
+    pandoc src/*.md  \
         --number-sections \
         -F pandoc-crossref \
         -F pandoc-citeproc \
         --bibliography=src/bibliography.yaml \
-        --csl tex/ieee.csl \
+        --csl .template/ieee.csl \
+        --template=.template/template.tex \
+        --include-in-header=.template/packages.tex \
+        --include-before-body=.template/theme.tex \
+        --include-before-body=.template/layout.tex \
+        --metadata-file=.template/metadata.yml \
         -o out/main.pdf
 }
 
 spellcheck() {
-    pandoc src/main.md \
+    pandoc src/*.md \
         -F pandoc-crossref \
         -F pandoc-citeproc \
         --bibliography=src/bibliography.yaml \
-        --csl tex/ieee.csl \
+        --csl .template/ieee.csl \
+        --template=.template/template.tex \
+        --include-in-header=.template/packages.tex \
+        --include-before-body=.template/theme.tex \
+        --include-before-body=.template/layout.tex \
+        --metadata-file=.template/metadata.yml \
         -t plain \
         -o out/main.txt
 }

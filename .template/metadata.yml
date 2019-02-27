@@ -1,0 +1,18 @@
+geometry: margin=2cm, bottom=3cm
+papersize: a4
+
+lang: de-DE
+keywords: [keyword1, keyword2]
+
+fontsize: 12pt
+fontfamily: times
+monofont: inconsolata
+
+hyphens: URL
+breakurl: true
+link-citations: true
+
+Deckblatt: true
+toc: true
+lot: false
+lof: false
