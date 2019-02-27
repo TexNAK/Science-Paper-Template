@@ -1,0 +1,7 @@
+version: '3'
+services:
+  pandoc:
+    build: .
+    command: ${BUILD_PARAMETERS:-build}
+    volumes:
+      - ../:/project
