@@ -1,0 +1,16 @@
+services:
+  - docker
+before_install:
+  - docker pull themegatb/pandoc-latex
+script:
+  - docker run --rm -v $(pwd):/project themegatb/pandoc-latex build
+deploy:
+  provider: releases
+  file: out/main.pdf
+  prerelease: true
+  skip_cleanup: true
+  api_key:
+    secure: HuU81lOAJ3Bj4gnItCHxJ3KKmZyad4stHokfONzgZ+MfUEB6zdy+bvk7/qwsra4V1br1gr6LToOsqlJ/kwGzDv+YaAUavNvB0Pd1cC1cV9A2hrWe98/KIb4bC3QjSXVgQur3VXuNHQi3w//fNtAbHaTwidupM84Zx2f94jpWTFmtD+sUJI0J65Bku4G7Cwh5qkaaZ0nCzVx9PSiY5dMNjPGb8twAQ+Q2Dh7lmXwcjN1cZ9W/zLvjkZpBWXZxqkNsEbmOH7gn/MrAwzPkTV4ononua4MaB9sPaTJyZBhDxgF/WBogKcgP/y2e06KyTDCMxszF+ANGOsOBxLXVRrrPwH5cA30Glh9l4/RHcvXAyIazD6kwteTijkZgxAUZBt3arQ3BkToGS3HP5WrHGy5F4L01RJTaf+A9GDYQEIxIyWXyAo5nWMjSs1T8v6EKkbeQddXOp3h2udabXqf8vtKP86fr1EtStrwa8jlR6RDU6FUZJI0VAR9gt/eRi+9lcsarK9EwWFuD/A3HiljW50rpBRt27OxmmQRfdundIxARQC49IVYoP2Ca1U0TyzIPRjLBCqsy+xs8lpQ/dTu4d/B0AZgVyAvwGz6ZScOUBBi1rqBQIGgjVYjqvFfNRlNDjN55SqgERDPjkPXvD6icqR6WZcq6gI75DnzrQ+Lzisx1Mn8=
+  on:
+    repo: TexNAK/Science-Paper-Template
+    branch: master
