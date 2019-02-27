@@ -64,4 +64,5 @@ case $1 in
     build) build;;
     watch) watch;;
     spellcheck) spellcheck;;
+    *) build;;
 esac
