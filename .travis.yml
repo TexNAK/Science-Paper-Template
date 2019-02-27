@@ -1,10 +1,9 @@
 services:
-- docker
+  - docker
 before_install:
-- docker pull themegatb/pandoc-latex
+  - docker pull themegatb/pandoc-latex
 script:
-- docker run --rm -v $(pwd):/project themegatb/pandoc-latex build
-- ls -lah out/
+  - docker run --rm -v $(pwd):/project themegatb/pandoc-latex build
 deploy:
   provider: releases
   file: out/main.pdf
