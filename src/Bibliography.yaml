@@ -1,0 +1,35 @@
+references:
+- id: src:source1
+  type: webpage
+  author:
+  - family: Müller
+  - family: Meier
+  issued:
+    date-parts:
+    - - 2018
+      - 11
+      - 10
+  title: How to write a TFL
+  container-title: How to write stuff
+  URL: https://example.org/howtowritestuff/tfl
+  accessed:
+    date-parts:
+    - - 2018
+      - 11
+      - 28
+  language: en-GB
+- id: src:source2
+  type: article
+  author:
+  - family: Müller
+    given: Hans
+  - family: Musk
+    given: Elon
+  issued:
+    date-parts:
+    - - 2017
+      - 2
+  title: The science behind science
+  language: en-GB
+  DOI: 10.1007/s00000-000-0000-0
+  publisher: Springer US
