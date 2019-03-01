@@ -380,19 +380,6 @@ $endif$
 $endif$
 
 \begin{document}
-$if(title)$
-$if(beamer)$
-\frame{\titlepage}
-$else$
-\maketitle
-\pagebreak
-$endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
-$endif$
-$endif$
 
 $if(Deckblatt)$
 \begin{center}
@@ -408,10 +395,17 @@ $if(Deckblatt)$
 \begin{center}
   \begin{tabularx}{\textwidth}{r|X}
     Matrikelnummer & $Matrikelnummer$ \\\midrule
-    Thema & $Thema$ \\\midrule
+    Thema & $title$ \\\midrule
     Studiengang, Zenturie & $Studiengang$, $Zenturie$\
   \end{tabularx}
 \end{center}
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
 \pagebreak
 $endif$
 

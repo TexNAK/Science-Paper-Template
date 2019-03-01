@@ -1,4 +1,26 @@
-# Boilerplate for scientific research papers
+# How to write scientific papers - the simple way
+
+- How to
+  - Setup
+    - Clone/Fork
+    - IDE Setups
+      - VSCode
+    - Template change pull
+    - Push template changes
+  - Build (macOS, Linux, Windoof)
+  - Write feedback
+  - Write document
+    - Common metadata attributes
+      - LOF/LOT
+      - Removing title page
+    - Citation
+    - References (sections, images, ...)
+- File overview
+  - Project
+  - Template
+- Referenzen
+  - Pandoc
+  - Markdown (Pandoc style)
 
 ## Pandoc-Markdown reference
 

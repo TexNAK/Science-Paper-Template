@@ -1,0 +1,7 @@
+--standalone
+--self-contained
+--number-sections
+--toc
+--css=.template/html/layout.css
+--template=.template/html/template.phtml
+-t html5

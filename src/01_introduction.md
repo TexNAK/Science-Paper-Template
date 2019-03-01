@@ -1,9 +1,10 @@
 ---
-    TFLNummer: 2
-    Matrikelnummer: 8240
-    Studiengang: Angewandte Informatik
+    TFLNummer: 1
+    title: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
+    author: Til Blechschmidt
     Zenturie: A17b
-    Thema: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
+    Studiengang: Angewandte Informatik
+    Matrikelnummer: 8240
 ---
 
 # Possent ventis hanc delubra

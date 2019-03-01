@@ -1,0 +1,51 @@
+@import url('https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/font/Sans/cmun-sans.css');
+
+html {
+    background-color: #455a64;
+    font-family: "Computer Modern Sans", sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+
+    margin: 16px auto;
+    max-width: 1000px;
+    min-width: 600px;
+    width: 50%;
+
+    padding: 32px;
+
+    box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+
+#title-block-header {
+    text-align: center;
+}
+
+#title-block-header::before {
+    content: '';
+    background: url('../logo.png');
+    background-size: cover;
+    width: 300px;
+    height: 91.3px;
+    display: block;
+    margin: 64px auto;
+}
+
+#title-block-header, #TOC {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #eee;
+}
+
+a {
+    color: rgb(5, 56, 121);
+    margin-bottom: 2px;
+    border-bottom: 0px solid black;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom-width: 2px;
+}

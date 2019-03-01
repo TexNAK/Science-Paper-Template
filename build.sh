@@ -1,36 +1,51 @@
-#!/bin/sh
-watch() {
-    fswatch src | xargs -L 1 ./build.sh build
-}
+#!/usr/bin/env bash
+OUTPUT_FOLDER="out"
+OUTPUT_FILE="${OUTPUT_FOLDER}/main"
+
+# Flags for pandoc
+PANDOC_INPUT="src/*.md"
+FLAGS_PANDOC=$(cat .build/FlagsGeneral.txt)
+FLAGS_PDF="${FLAGS_PANDOC} $(cat .build/FlagsPDF.txt)"
+FLAGS_HTML="${FLAGS_PANDOC} $(cat .build/FlagsHTML.txt)"
+FLAGS_PLAINTEXT="${FLAGS_PANDOC} $(cat .build/FlagsPlaintext.txt)"
 
 build() {
-    pandoc src/*.md  \
-        --number-sections \
-        -F pandoc-crossref \
-        -F pandoc-citeproc \
-        --bibliography=src/bibliography.yaml \
-        --csl .template/ieee.csl \
-        --template=.template/template.tex \
-        --include-in-header=.template/packages.tex \
-        --include-before-body=.template/theme.tex \
-        --include-before-body=.template/layout.tex \
-        --metadata-file=.template/metadata.yml \
-        -o out/main.pdf
-}
+    PREFIX=""
+    if [ "$2" = true ]; then
+        PREFIX="$(date "+[%H:%M:%S]") "
+    fi
 
-spellcheck() {
-    pandoc src/*.md \
-        -F pandoc-crossref \
-        -F pandoc-citeproc \
-        --bibliography=src/bibliography.yaml \
-        --csl .template/ieee.csl \
-        --template=.template/template.tex \
-        --include-in-header=.template/packages.tex \
-        --include-before-body=.template/theme.tex \
-        --include-before-body=.template/layout.tex \
-        --metadata-file=.template/metadata.yml \
-        -t plain \
-        -o out/main.txt
+    MESSAGE="${PREFIX}Building for target '${TARGET}' ..."
+
+    echo ${MESSAGE}
+
+    mkdir -p ${OUTPUT_FOLDER}
+
+    case $1 in
+        pdf)
+            pandoc ${PANDOC_INPUT} ${FLAGS_PDF} -o "${OUTPUT_FILE}.pdf"
+            ;;
+        plaintext)
+            pandoc ${PANDOC_INPUT} ${FLAGS_PLAINTEXT} -o "${OUTPUT_FILE}.txt"
+            ;;
+        html)
+            pandoc ${PANDOC_INPUT} ${FLAGS_HTML} -o "${OUTPUT_FILE}.html"
+            ;;
+        *)
+            echo -e "\r\033[1A\033[0KInvalid target: '${TARGET}'"
+            return -1
+            ;;
+    esac
+
+    local status=$?
+
+    if [ $status -ne 0 ]; then
+        echo -e "\n${MESSAGE} \033[31merror\033[0m" >&2
+    else
+        echo -e "\r\033[1A\033[0K${MESSAGE} \033[32mdone\033[0m"
+    fi
+
+    return $status
 }
 
 help() {
@@ -38,16 +53,12 @@ help() {
 Markdown typesetting tool.
 
     usage:
-        build.sh [--docker][--help] command
+        build.sh [--target type][--docker][--help]
 
     parameters:
-        --docker        run inside docker container.
-        --help          print this.
-
-    commands:
-        build           typeset src/main.md -> out/main.pdf
-        spellcheck      typeset src/main.md -> out/main.txt
-        watch           watch src and execute build on file change.
+        --target        Determines the output file type. One of: pdf, html, plaintext
+        --docker        Run inside docker container. Ignored if already inside a container.
+        --help          Print this help.
 
     examples:
         build.sh watch
@@ -57,12 +68,46 @@ Markdown typesetting tool.
 EOF
 }
 
-mkdir -p out
-case $1 in
-    --help) help;;
-    --docker) BUILD_PARAMETERS="${@:2}" docker-compose -p latex_build -f .docker/docker-compose.yml up;;
-    build) build;;
-    watch) watch;;
-    spellcheck) spellcheck;;
-    *) build;;
-esac
+PARAMETERS="$@"
+
+DOCKER=false
+TARGET=pdf
+WATCH=false
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -t|--target)
+            TARGET="$2"
+            shift
+            shift
+            ;;
+        -d|--docker)
+            DOCKER=true
+            shift
+            ;;
+        -w|--watch)
+            WATCH=true
+            shift
+            ;;
+        -h|--help)
+            help
+            exit
+            ;;
+        *)
+            # unknown option
+            shift
+            ;;
+    esac
+done
+
+# When asked to run in docker and we are not already then move into the matrix.
+if [ ! -f /.dockerenv ] && [ "$DOCKER" = true ]; then
+    BUILD_PARAMETERS="${PARAMETERS}" docker-compose -p latex_build -f .docker/docker-compose.yml up
+    exit
+fi
+
+if [ "$WATCH" = true ]; then
+    fswatch src | while read -r changed_path; do build $TARGET true; done
+else
+    build $TARGET
+fi
