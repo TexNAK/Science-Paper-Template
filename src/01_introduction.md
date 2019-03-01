@@ -1,10 +1,13 @@
 ---
     TFLNummer: 1
     title: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
-    author: Til Blechschmidt
-    Zenturie: A17b
+    
+    author: Max Mustermann
+    Zenturie: A22f
     Studiengang: Angewandte Informatik
-    Matrikelnummer: 8240
+    Matrikelnummer: 1337
+
+    keywords: [keyword1, keyword2]
 ---
 
 # Possent ventis hanc delubra

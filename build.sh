@@ -60,7 +60,7 @@ Markdown typesetting tool.
         build.sh [--target type][--docker][--help]
 
     parameters:
-        --target        Determines the output file type. One of: pdf, html, plaintext
+        --target        Determines the output file type. One of: pdf, html, plaintext, epub
         --docker        Run inside docker container. Ignored if already inside a container.
         --help          Print this help.
 

@@ -2,7 +2,6 @@ geometry: margin=2cm, bottom=3cm
 papersize: a4
 
 lang: de-DE
-keywords: [keyword1, keyword2]
 
 fontsize: 12pt
 fontfamily: times
