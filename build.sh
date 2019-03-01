@@ -6,6 +6,7 @@ OUTPUT_FILE="${OUTPUT_FOLDER}/main"
 PANDOC_INPUT="src/*.md"
 FLAGS_PANDOC=$(cat .build/FlagsGeneral.txt)
 FLAGS_PDF="${FLAGS_PANDOC} $(cat .build/FlagsPDF.txt)"
+FLAGS_EPUB="${FLAGS_PANDOC} $(cat .build/FlagsEPUB.txt)"
 FLAGS_HTML="${FLAGS_PANDOC} $(cat .build/FlagsHTML.txt)"
 FLAGS_PLAINTEXT="${FLAGS_PANDOC} $(cat .build/FlagsPlaintext.txt)"
 
@@ -30,6 +31,9 @@ build() {
             ;;
         html)
             pandoc ${PANDOC_INPUT} ${FLAGS_HTML} -o "${OUTPUT_FILE}.html"
+            ;;
+        epub)
+            pandoc ${PANDOC_INPUT} ${FLAGS_EPUB} -t epub -o "${OUTPUT_FILE}.epub"
             ;;
         *)
             echo -e "\r\033[1A\033[0KInvalid target: '${TARGET}'"
