@@ -57,11 +57,7 @@ You can then omit the `--docker` flag on the commandline.
 
 #### Windows
 
-Open the commandline, change into the project directory and execute the following command:
-
-```cmd
-build.cmd
-```
+Double click the `build.cmd` file in the project directory. It opens a window with the log output from the typesetter. It will stay open after the build finished. You can close it by pressing _any key_.
 
 _NOTE: Windows builds are untested and the build script for Windows needs some love. Feel free to contribute._
 
