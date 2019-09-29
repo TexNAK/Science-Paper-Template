@@ -10,7 +10,7 @@
     keywords: [keyword1, keyword2]
 ---
 
-# Possent ventis hanc delubra
+# Possent ventis hanc delubra (+CPU)
 
 ## Colophonius curvum stetit sospes
 

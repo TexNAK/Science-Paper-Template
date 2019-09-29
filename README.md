@@ -77,14 +77,15 @@ You can watch the source files for changes and automatically rebuild by appendin
 
 Source files that get included in the final document are contained in the `src/` directory. Prior to building all Markdown files get concatenated in alphabetical order. By using a numerical prefix (as shown below) you can determine the order of your content in the final document.
 
-Literature sources are listed in `bibliography.yaml` and can be referenced as described in the second section.
+Literature sources are listed in `bibliography.yaml` and can be referenced as described in the second section. Glossary entries are defined in `glossary.tex` and their use is described in the FAQ.
 
 ```bash
 src
 ├── 01_introduction.md
 ├── 02_conclusion.md
 ├── 90_appendix.md
-└── bibliography.yaml
+├── bibliography.yaml
+└── glossary.tex
 ```
 
 ### Template
@@ -107,10 +108,12 @@ Everything template related is placed in hidden subfolders excluding the build s
 │   ├── FlagsPDF.txt
 │   └── FlagsPlaintext.txt
 ├── .template         // Document template
-│   ├── date.lua      // Current date generator
 │   ├── ieee.csl      // Citation style
 │   ├── logo.png      // Nordakademie branding
 │   ├── metadata.yml  // Default metadata
+│   ├── pandoc        // Pandoc filters
+│   │   ├── date.lua  // Current date generator
+│   │   └── gls.lua   // Glossary shortcuts
 │   ├── tex           // LaTeX template
 │   │   ├── layout.tex    // General layout (e.g. linespace)
 │   │   ├── packages.tex  // Packages used in the template
@@ -137,6 +140,10 @@ If you are not a fan of our custom designed, anonymized title page you can remov
 ### Q: Where is the list of tables/figures?
 
 You can enable them by adding `lot: true` and `lof: true` respectively in the metadata section.
+
+### Q: What about glossary entries?
+
+Glossary entries are defined in `src/glossary.tex` and you can use them [according to this documentation](https://github.com/tomncooper/pandoc-gls/blob/ed659c7b50baab9ce7c8eab15285fe9602f914f7/ReadMe.md#pandoc-gls)
 
 ## Feedback
 

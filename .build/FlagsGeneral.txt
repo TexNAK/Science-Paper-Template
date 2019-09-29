@@ -3,4 +3,5 @@
 --bibliography=src/bibliography.yaml
 --csl .template/ieee.csl
 --metadata-file=.template/metadata.yml
---lua-filter=.template/date.lua
+--lua-filter=.template/pandoc/date.lua
+--lua-filter=.template/pandoc/gls.lua

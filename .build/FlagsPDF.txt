@@ -1,5 +1,6 @@
 --template=.template/tex/template.tex
 --include-in-header=.template/tex/packages.tex
+--include-in-header=src/glossary.tex
 --include-before-body=.template/tex/theme.tex
 --include-before-body=.template/tex/layout.tex
 --number-sections
