@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -yq update && \
     apt-get install -qy --no-install-recommends --fix-missing \
         texlive texlive-latex-extra texlive-science texlive-lang-german \
+        texlive-generic-extra \
         python-pygments texlive-xetex texlive-bibtex-extra make \
     	python-pip wget lmodern fonts-lmodern fswatch && \
     apt-get -yq autoremove && \
