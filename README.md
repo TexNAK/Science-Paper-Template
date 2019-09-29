@@ -77,14 +77,15 @@ You can watch the source files for changes and automatically rebuild by appendin
 
 Source files that get included in the final document are contained in the `src/` directory. Prior to building all Markdown files get concatenated in alphabetical order. By using a numerical prefix (as shown below) you can determine the order of your content in the final document.
 
-Literature sources are listed in `bibliography.yaml` and can be referenced as described in the second section.
+Literature sources are listed in `bibliography.yaml` and can be referenced as described in the second section. Glossary entries are defined in `glossary.tex` and their use is described in the FAQ.
 
 ```bash
 src
 ├── 01_introduction.md
 ├── 02_conclusion.md
 ├── 90_appendix.md
-└── bibliography.yaml
+├── bibliography.yaml
+└── glossary.tex
 ```
 
 ### Template
