@@ -107,10 +107,12 @@ Everything template related is placed in hidden subfolders excluding the build s
 │   ├── FlagsPDF.txt
 │   └── FlagsPlaintext.txt
 ├── .template         // Document template
-│   ├── date.lua      // Current date generator
 │   ├── ieee.csl      // Citation style
 │   ├── logo.png      // Nordakademie branding
 │   ├── metadata.yml  // Default metadata
+│   ├── pandoc        // Pandoc filters
+│   │   ├── date.lua  // Current date generator
+│   │   └── gls.lua   // Glossary shortcuts
 │   ├── tex           // LaTeX template
 │   │   ├── layout.tex    // General layout (e.g. linespace)
 │   │   ├── packages.tex  // Packages used in the template
