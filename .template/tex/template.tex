@@ -383,7 +383,7 @@ $endif$
 $endif$
 
 \begin{document}
-
+\pagenumbering{roman}
 $if(Deckblatt)$
 \begin{center}
   \includegraphics[width=0.4\textwidth,keepaspectratio]{.template/logo}
@@ -454,7 +454,7 @@ $if(lof)$
 \listoffigures
 $endif$
 \pagebreak
-
+\pagenumbering{arabic}
 $body$
 
 $if(natbib)$
