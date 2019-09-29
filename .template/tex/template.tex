@@ -309,6 +309,9 @@ $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
+
+\makenoidxglossaries
+
 $if(lang)$
 \ifnum 0\ifxetex 1\fi=0 % if pdftex or luatex
   \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
@@ -418,6 +421,11 @@ $for(include-before)$
 $include-before$
 $endfor$
 
+$if(glossaryafter)$
+$else$
+\printnoidxglossary[sort=word]
+$endif$
+
 $if(toc)$
 $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
@@ -482,6 +490,10 @@ $endif$
 $endif$
 $for(include-after)$
 $include-after$
-
 $endfor$
+
+$if(glossaryafter)$
+\printnoidxglossary[sort=word]
+$endif$
+
 \end{document}

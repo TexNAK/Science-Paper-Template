@@ -15,3 +15,4 @@ Deckblatt: true
 toc: true
 lot: false
 lof: false
+glossaryafter: true
