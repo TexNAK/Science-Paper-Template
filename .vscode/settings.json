@@ -6,12 +6,12 @@
         "editor.acceptSuggestionOnEnter": "smart"
     },
     "files.exclude": {
-        "**/.template": false,
-        "**/.build": false,
-        "**/.docker": false,
-        "**/.vscode": false,
-        "**/.gitignore": false,
-        "**/.travis.yml": false,
-        "**/.markdownlint.json": false
+        "**/.template": true,
+        "**/.build": true,
+        "**/.docker": true,
+        "**/.vscode": true,
+        "**/.gitignore": true,
+        "**/.travis.yml": true,
+        "**/.markdownlint.json": true
     }
 }
