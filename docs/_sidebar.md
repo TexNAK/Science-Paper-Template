@@ -1,2 +1,3 @@
-* [](/)
-* [](guide.md)
+- Getting started
+
+  - [Quick start](guide.md)
