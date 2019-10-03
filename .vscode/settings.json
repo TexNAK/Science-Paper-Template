@@ -11,6 +11,7 @@
         "**/.docker": false,
         "**/.vscode": false,
         "**/.gitignore": false,
-        "**/.travis.yml": false
+        "**/.travis.yml": false,
+        "**/.markdownlint.json": false
     }
 }
