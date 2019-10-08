@@ -29,6 +29,7 @@ brew cask install visual-studio-code
 ```bash
 sudo snap install --classic code
 ```
+For more information on how to install Visual Studio Code on your specific Linux distribution, check out https://code.visualstudio.com/docs/setup/linux .
 
 ### Extensions
 
