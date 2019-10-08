@@ -1,3 +1,9 @@
 # Science-Paper-Template
 
-Hello wonderful world!
+## Motivation
+
+### Disclaimer
+
+### Publish your work
+
+## Contributing as a author

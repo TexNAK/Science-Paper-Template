@@ -1,3 +1,15 @@
 - Getting started
-
-  - [Quick start](guide.md)
+  - [Download template](setup/download.md)
+  - [Install IDE](setup/ide.md)
+  - [Install Build System](setup/buildSystem.md)
+- Authoring
+  - [Project Structure](authoring/structure.md)
+  - [Metadata](authoring/metadata.md)
+  - [Markdown](authoring/markdown.md)
+  - [Bibliography](authoring/bibliography.md)
+  - [Glossary](authoring/glossary.md)
+  - [Cross-Referencing](authoring/references.md)
+  - [Inline LaTeX & Math](authoring/latex.md)
+- Contributing
+  - [Supporting the project](contribution/author.md)
+  - [Improving the template](contribution/developer.md)
