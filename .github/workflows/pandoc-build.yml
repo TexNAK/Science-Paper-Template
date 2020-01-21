@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build PDF file
       run: |
-        docker login -u publisher -p {{secrets.GITHUB_TOKEN}} docker.pkg.github.com
+        docker login -u ${{ github.actor }} -p {{secrets.GITHUB_TOKEN}} docker.pkg.github.com
         ./build.sh --target pdf --docker --remote-image build
     - name: Archive typesetting artifacts
       uses: actions/upload-artifact@v1
