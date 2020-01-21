@@ -1,5 +1,5 @@
 ---
-    TFLNummer: 1
+    header-title: Transferleistung 1
     title: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
     
     author: Max Mustermann
