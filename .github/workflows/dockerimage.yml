@@ -14,7 +14,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
         image-name: pandoc-build # Provide only Docker image name, tag will be automatically set to latest:
-        dockerfile: .docker
+        dockerfile-path: .docker
 
 #   publish-image:
 #     runs-on: ubuntu-latest
