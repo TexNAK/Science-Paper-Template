@@ -15,7 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     - name: Pull Docker image
-      run: docker pull "docker.pkg.github.com/$GITHUB_REPOSITORY/pandoc-build:latest"
+      run: docker pull "docker.pkg.github.com/texnak/science-paper-template/pandoc-build:latest"
     - name: Build PDF file
       run: ./build.sh --target pdf --docker --remote-image build
     - name: Archive typesetting artifacts
