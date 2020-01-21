@@ -9,12 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Print GITHUB_TOKEN for debugging
-      run: echo ${GITHUB_TOKEN}
     - name: Build PDF file
-      run: |
-        docker login -u publisher -p ${GITHUB_TOKEN} docker.pkg.github.com
-        ./build.sh --target pdf --docker --remote-image build
+      run: ./build.sh --target pdf --docker --remote-image build
     - name: Archive typesetting artifacts
       uses: actions/upload-artifact@v1
       with:
