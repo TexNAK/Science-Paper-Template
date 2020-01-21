@@ -1,5 +1,4 @@
 name: Publish Docker
-uses: elgohr/Publish-Docker-Github-Action@2.12
 
 on: [push]
 jobs:
