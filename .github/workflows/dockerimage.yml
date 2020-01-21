@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2 # Checking out the repo
 
     - name: Build and Publish latest Docker image
-      uses: TilBlechschmidt/gp-docker-action@v0.1-alpha
+      uses: TilBlechschmidt/gp-docker-action@v0.2-alpha
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
         image-name: pandoc-build # Provide only Docker image name, tag will be automatically set to latest:
