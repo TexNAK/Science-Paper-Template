@@ -10,6 +10,7 @@
   - [Glossary](authoring/glossary.md)
   - [Cross-Referencing](authoring/references.md)
   - [Inline LaTeX & Math](authoring/latex.md)
+  - [Generating a PDF](authoring/building.md)
 - Contributing
   - [Supporting the project](contribution/author.md)
   - [Improving the template](contribution/developer.md)

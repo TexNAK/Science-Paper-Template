@@ -1,6 +1,15 @@
 version: '3'
 services:
+  # Uses the GitHub Packages registry, requires GitHub authentication first though
+  # docker login -u USERNAME -p PERSONAL_ACCESS_TOKEN docker.pkg.github.com
   pandoc:
+    image: docker.pkg.github.com/texnak/science-paper-template/pandoc-build:latest
+    command: ${BUILD_PARAMETERS:-build}
+    volumes:
+      - ../:/project
+
+  # Uses a local build of the docker image
+  pandoc-local:
     build: .
     command: ${BUILD_PARAMETERS:-build}
     volumes:

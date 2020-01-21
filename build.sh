@@ -62,6 +62,7 @@ Markdown typesetting tool.
     parameters:
         --target        Determines the output file type. One of: pdf, html, plaintext, epub
         --docker        Run inside docker container. Ignored if already inside a container.
+        --remote-image  Use the image from GitHub Packages. Requires login ( docker login -u USERNAME -p PERSONAL_ACCESS_TOKEN docker.pkg.github.com ).
         --help          Print this help.
 
     examples:
@@ -75,6 +76,7 @@ EOF
 PARAMETERS="$@"
 
 DOCKER=false
+COMPOSE_SERVICE="pandoc-local"
 TARGET=pdf
 WATCH=false
 
@@ -87,6 +89,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         -d|--docker)
             DOCKER=true
+            shift
+            ;;
+        -r|--remote-image)
+            COMPOSE_SERVICE=pandoc
             shift
             ;;
         -w|--watch)
@@ -106,7 +112,7 @@ done
 
 # When asked to run in docker and we are not already then move into the matrix.
 if [ ! -f /.dockerenv ] && [ "$DOCKER" = true ]; then
-    BUILD_PARAMETERS="${PARAMETERS}" docker-compose -p latex_build -f .docker/docker-compose.yml up
+    BUILD_PARAMETERS="${PARAMETERS}" docker-compose -p latex_build -f .docker/docker-compose.yml up $COMPOSE_SERVICE
     exit
 fi
 

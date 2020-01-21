@@ -11,6 +11,10 @@
                 "--docker",
                 "build"
             ],
+            "windows": {
+                "command": ".\\build.cmd",
+                "args": []
+            },
             "presentation": {
                 "echo": false,
                 "showReuseMessage": false,
