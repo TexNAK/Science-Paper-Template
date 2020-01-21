@@ -1,4 +1,4 @@
-name: CI
+name: Pandoc build
 
 on: [push]
 
@@ -9,8 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Docker login
+      run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
+      env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Pull Docker image
+      run: docker pull "docker.pkg.github.com/texnak/science-paper-template/pandoc-build:latest"
     - name: Build PDF file
-      run: ./build.sh --target pdf --docker build
+      run: ./build.sh --target pdf --docker --remote-image build
     - name: Archive typesetting artifacts
       uses: actions/upload-artifact@v1
       with:
