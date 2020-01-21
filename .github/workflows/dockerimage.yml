@@ -1,0 +1,30 @@
+name: Publish Docker
+
+on: [push]
+jobs:
+  build-and-publish-latest:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' # Running this job only for master branch
+
+    steps:
+    - uses: actions/checkout@v2 # Checking out the repo
+
+    - name: Build and Publish latest Docker image
+      uses: TilBlechschmidt/gp-docker-action@v0.2-alpha
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+        image-name: pandoc-build # Provide only Docker image name, tag will be automatically set to latest:
+        dockerfile-path: .docker
+
+#   publish-image:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@master
+#     - name: Publish to Registry
+#       uses: HurricanKai/Publish-Docker-Github-Action@master
+#       with:
+#         dockerfile: .docker/Dockerfile
+#         name: themegatb/pandoc-build
+#         username: ${{ secrets.DOCKER_USERNAME }}
+#         password: ${{ secrets.DOCKER_PASSWORD }}
+#         cache: true
