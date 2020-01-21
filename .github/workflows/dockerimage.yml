@@ -1,0 +1,17 @@
+name: Publish Docker
+uses: elgohr/Publish-Docker-Github-Action@2.12
+
+on: [push]
+jobs:
+  publish-image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: HurricanKai/Publish-Docker-Github-Action@master
+      with:
+        dockerfile: .docker/Dockerfile
+        name: themegatb/pandoc-build
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        cache: true
