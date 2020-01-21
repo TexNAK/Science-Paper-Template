@@ -11,8 +11,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build PDF file
       run: |
-        docker login -u ${{ github.actor }} -p {{secrets.GITHUB_TOKEN}} docker.pkg.github.com
+        # send credentials through stdin (it is more secure)
+        user=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/user | jq -r .login)
+        echo $user
+        # lowercase the username
+        username="$(echo ${user} | tr "[:upper:]" "[:lower:]")"
+        echo $username
+        echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com -u "${username}" --password-stdin 
         ./build.sh --target pdf --docker --remote-image build
+#       docker login -u ${{ github.actor }} -p {{secrets.GITHUB_TOKEN}} docker.pkg.github.com
     - name: Archive typesetting artifacts
       uses: actions/upload-artifact@v1
       with:
