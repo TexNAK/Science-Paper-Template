@@ -12,6 +12,7 @@
         "**/.vscode": true,
         "**/.gitignore": true,
         "**/.travis.yml": true,
-        "**/.markdownlint.json": true
+        "**/.markdownlint.json": true,
+        "**/.github": true
     }
 }
