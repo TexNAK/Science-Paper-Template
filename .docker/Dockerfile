@@ -10,7 +10,7 @@ RUN apt-get -yq update && \
         texlive texlive-latex-extra texlive-science texlive-lang-german \
         texlive-generic-extra \
         python-pygments texlive-xetex texlive-bibtex-extra make \
-    	python-pip wget lmodern fonts-lmodern fswatch && \
+    	python-pip wget lmodern fonts-lmodern fswatch unzip && \
     apt-get -yq autoremove && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
