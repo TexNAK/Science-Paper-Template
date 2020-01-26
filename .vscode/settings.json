@@ -13,6 +13,7 @@
         "**/.gitignore": true,
         "**/.travis.yml": true,
         "**/.markdownlint.json": true,
-        "**/.github": true
+        "**/.github": true,
+        "**/.sptcloud.json": true
     }
 }

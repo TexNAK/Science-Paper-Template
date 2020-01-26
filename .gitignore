@@ -1,4 +1,6 @@
 out/
+sptcloud.exe
+sptcloud
 
 # Created by https://www.gitignore.io/api/macos,linux,latex,windows
 # Edit at https://www.gitignore.io/?templates=macos,linux,latex,windows
