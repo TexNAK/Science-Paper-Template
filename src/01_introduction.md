@@ -8,6 +8,9 @@
     Matrikelnummer: 1337
 
     keywords: [keyword1, keyword2]
+    
+    # This can be replaced with any valid bibliography file (.yaml, .json, .bib)
+    bibliography: src/bibliography.yaml
 ---
 
 # Possent ventis hanc delubra (+CPU)

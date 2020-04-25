@@ -1,6 +1,5 @@
 -F pandoc-crossref
 -F pandoc-citeproc
---bibliography=src/bibliography.yaml
 --csl .template/ieee.csl
 --metadata-file=.template/metadata.yml
 --lua-filter=.template/pandoc/date.lua
