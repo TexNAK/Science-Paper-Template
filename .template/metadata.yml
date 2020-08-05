@@ -16,3 +16,15 @@ toc: true
 lot: false
 lof: false
 glossaryafter: true
+
+natbib: true
+
+tablenos-warning-level: 1
+
+figPrefix:
+  - "Abbildung"
+  - "Abbildungen"
+
+secPrefix:
+  - "Abschnitt"
+  - "Abschnitten"

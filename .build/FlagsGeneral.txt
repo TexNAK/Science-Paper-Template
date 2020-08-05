@@ -1,3 +1,4 @@
+-F /usr/local/bin/pandoc-tablenos
 -F pandoc-crossref
 -F pandoc-citeproc
 --csl .template/ieee.csl
