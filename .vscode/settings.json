@@ -15,5 +15,14 @@
         "**/.markdownlint.json": false,
         "**/.github": false,
         "**/.sptcloud.json": false
-    }
+    },
+    "PandocCiter.DefaultBib": "src/bibliography.bib",
+    "markdown.occurrencesHighlight.enabled": true,
+    "languageToolLinter.languageTool.motherTongue": "de-DE",
+    "languageToolLinter.languageTool.preferredVariants": "de-DE,en-US",
+    "languageToolLinter.plainText.languageIds": [
+        "plaintext",
+        "markdown"
+    ],
+    "languageToolLinter.serviceType": "public"
 }
