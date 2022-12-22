@@ -391,7 +391,7 @@ $if(Deckblatt)$
 \end{center}
 
 \begin{center}
-  {\huge $header-title$}
+  {\huge $header-title$\par}
   \vspace{1cm}
 \end{center}
 
@@ -443,6 +443,7 @@ $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
+\vspace*{-0.7cm}
 \tableofcontents
 }
 $endif$
