@@ -3,7 +3,7 @@
     title: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
 
     # For transfer papers only disclose your matriculation number
-    author: "Max Mustermann (Matrikel-Nr. 1337)"
+    author: Max Mustermann (Matrikel-Nr. 1337)
     centuria: A22f
     course-of-studies: Angewandte Informatik
 
