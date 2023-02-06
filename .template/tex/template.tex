@@ -420,9 +420,9 @@ $if(Deckblatt)$
 
 \begin{center}
   \begin{tabularx}{\textwidth}{r|X}
-    Modul & $header-title$ \\\midrule
+    Modul & $module$ \\\midrule
     Autor & $author$ \\\midrule
-    Studiengang, Zenturie & $Studiengang$, $Zenturie$\
+    Studiengang, Zenturie & $course-of-studies$, $centuria$\
   \end{tabularx}
 \end{center}
 
@@ -437,7 +437,7 @@ $endif$
 
 \pagenumbering{roman}
 \pagestyle{fancy}
-\lhead{\textcolor{nordakademie-blue}{\uppercase{$header-title$}}}
+\lhead{\textcolor{nordakademie-blue}{\uppercase{$module$}}}
 \rhead{\textcolor{nordakademie-blue}{\includegraphics[height=1cm,keepaspectratio]{.template/logo_header.png}}}
 \cfoot{\thepage}
 
