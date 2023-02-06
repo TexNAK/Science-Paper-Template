@@ -406,22 +406,22 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
-\pagenumbering{roman}
 $if(Deckblatt)$
+\thispagestyle{empty}
 \begin{center}
   \includegraphics[width=0.4\textwidth,keepaspectratio]{.template/logo_centered.png}
   \vspace{2cm}
 \end{center}
 
 \begin{center}
-  {\huge $header-title$\par}
-  \vspace{1cm}
+  {\LARGE $title$\par}
+  \vspace{2cm}
 \end{center}
 
 \begin{center}
   \begin{tabularx}{\textwidth}{r|X}
-    Matrikelnummer & $Matrikelnummer$ \\\midrule
-    Thema & $title$ \\\midrule
+    Modul & $header-title$ \\\midrule
+    Autor & $author$ \\\midrule
     Studiengang, Zenturie & $Studiengang$, $Zenturie$\
   \end{tabularx}
 \end{center}
@@ -435,6 +435,7 @@ $endif$
 \pagebreak
 $endif$
 
+\pagenumbering{roman}
 \pagestyle{fancy}
 \lhead{\textcolor{nordakademie-blue}{\uppercase{$header-title$}}}
 \rhead{\textcolor{nordakademie-blue}{\includegraphics[height=1cm,keepaspectratio]{.template/logo_header.png}}}
