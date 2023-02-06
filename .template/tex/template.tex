@@ -469,12 +469,16 @@ $endif$
 $endif$
 \pagebreak
 $if(lof)$
-\addcontentsline{toc}{section}{\listfigurename}
-\listoffigures
+\iftotalfigures
+  \addcontentsline{toc}{section}{\listfigurename}
+  \listoffigures
+\fi
 $endif$
 $if(lot)$
-\addcontentsline{toc}{section}{\listtablename}
-\listoftables
+\iftotaltables
+  \addcontentsline{toc}{section}{\listtablename}
+  \listoftables
+\fi
 $endif$
 $if(glossaryafter)$
 $else$
