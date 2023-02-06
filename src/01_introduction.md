@@ -2,8 +2,9 @@
     module: Transferleistung 1
     title: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
 
-    # For transfer papers only disclose your matriculation number
-    author: Max Mustermann (Matrikel-Nr. 1337)
+    # For transfer papers leave author blank
+    author: Max Mustermann
+    matriculation-number: 1337
     centuria: A22f
     course-of-studies: Angewandte Informatik
 

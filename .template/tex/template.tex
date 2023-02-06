@@ -421,7 +421,8 @@ $if(Deckblatt)$
 \begin{center}
   \begin{tabularx}{\textwidth}{r|X}
     Modul & $module$ \\\midrule
-    Autor & $author$ \\\midrule
+    $if(author)$ Autor & $author$ $if(matriculation-number)$(Matrikel-Nr. $matriculation-number$)$endif$ \\\midrule
+    $else$ Matrikel-Nr. & $matriculation-number$ \\\midrule $endif$
     Studiengang, Zenturie & $course-of-studies$, $centuria$\
   \end{tabularx}
 \end{center}
