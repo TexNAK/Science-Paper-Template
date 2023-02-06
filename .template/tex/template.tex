@@ -406,23 +406,24 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
-\pagenumbering{roman}
 $if(Deckblatt)$
+\thispagestyle{empty}
 \begin{center}
   \includegraphics[width=0.4\textwidth,keepaspectratio]{.template/logo_centered.png}
   \vspace{2cm}
 \end{center}
 
 \begin{center}
-  {\huge $header-title$\par}
-  \vspace{1cm}
+  {\LARGE $title$\par}
+  \vspace{2cm}
 \end{center}
 
 \begin{center}
   \begin{tabularx}{\textwidth}{r|X}
-    Matrikelnummer & $Matrikelnummer$ \\\midrule
-    Thema & $title$ \\\midrule
-    Studiengang, Zenturie & $Studiengang$, $Zenturie$\
+    Modul & $module$ \\\midrule
+    $if(author)$ Autor & $author$ $if(matriculation-number)$(Matrikel-Nr. $matriculation-number$)$endif$ \\\midrule
+    $else$ Matrikel-Nr. & $matriculation-number$ \\\midrule $endif$
+    Studiengang, Zenturie & $course-of-studies$, $centuria$\
   \end{tabularx}
 \end{center}
 
@@ -435,19 +436,15 @@ $endif$
 \pagebreak
 $endif$
 
+\pagenumbering{roman}
 \pagestyle{fancy}
-\lhead{\textcolor{nordakademie-blue}{\uppercase{$header-title$}}}
+\lhead{\textcolor{nordakademie-blue}{\uppercase{$module$}}}
 \rhead{\textcolor{nordakademie-blue}{\includegraphics[height=1cm,keepaspectratio]{.template/logo_header.png}}}
 \cfoot{\thepage}
 
 $for(include-before)$
 $include-before$
 $endfor$
-
-$if(glossaryafter)$
-$else$
-\printnoidxglossary[sort=word]
-$endif$
 
 $if(toc)$
 $if(toc-title)$
@@ -471,13 +468,21 @@ $endif$
 $endif$
 $endif$
 \pagebreak
-$if(lot)$
-\addcontentsline{toc}{section}{\listfigurename}
-\listoftables
-$endif$
 $if(lof)$
-\addcontentsline{toc}{section}{\listfigurename}
-\listoffigures
+\iftotalfigures
+  \addcontentsline{toc}{section}{\listfigurename}
+  \listoffigures
+\fi
+$endif$
+$if(lot)$
+\iftotaltables
+  \addcontentsline{toc}{section}{\listtablename}
+  \listoftables
+\fi
+$endif$
+$if(glossaryafter)$
+$else$
+\printnoidxglossary[sort=word]
 $endif$
 \pagebreak
 \pagenumbering{arabic}
