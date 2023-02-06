@@ -12,10 +12,10 @@ breakurl: true
 link-citations: true
 
 Deckblatt: true
-toc: true
-lot: false
-lof: false
-glossaryafter: true
+toc: true             # table of contents
+lot: true             # list of tables
+lof: true             # list of figures
+glossaryafter: false  # put glossary at the end of the document
 
 natbib: true
 
