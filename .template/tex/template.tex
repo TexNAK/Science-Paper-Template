@@ -445,11 +445,6 @@ $for(include-before)$
 $include-before$
 $endfor$
 
-$if(glossaryafter)$
-$else$
-\printnoidxglossary[sort=word]
-$endif$
-
 $if(toc)$
 $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
@@ -472,13 +467,17 @@ $endif$
 $endif$
 $endif$
 \pagebreak
-$if(lot)$
-\addcontentsline{toc}{section}{\listfigurename}
-\listoftables
-$endif$
 $if(lof)$
 \addcontentsline{toc}{section}{\listfigurename}
 \listoffigures
+$endif$
+$if(lot)$
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+$endif$
+$if(glossaryafter)$
+$else$
+\printnoidxglossary[sort=word]
 $endif$
 \pagebreak
 \pagenumbering{arabic}
