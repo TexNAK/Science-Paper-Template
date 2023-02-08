@@ -5,3 +5,4 @@
 --metadata-file=.template/metadata.yml
 --lua-filter=.template/pandoc/date.lua
 --lua-filter=.template/pandoc/gls.lua
+--lua-filter=.template/pandoc/imgpaths.lua

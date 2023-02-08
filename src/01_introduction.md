@@ -47,6 +47,10 @@ Saxa resoluta quid nupta, tremulis ore infelix
 amnis at tamque, **procul siquidem** in artis! Poma partes sponte, nam lux
 discedit gravi aequore nunc[@src:source1]. Diese Information findet man in @fig:example.
 
-![Beispiel Abbildung](src/images/example.jpeg){#fig:example}
+![Beispiel Abbildung (relativer Pfad zu Project Root)](src/images/example.jpeg){#fig:example}
+
+![Beispiel Abbildung (absoluter Pfad)](/src/images/example.jpeg){#fig:example1}
+
+![Beispiel Abbildung (relativer Pfad)](images/example.jpeg){#fig:example2}
 
 \pagebreak
