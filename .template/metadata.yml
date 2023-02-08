@@ -28,3 +28,7 @@ figPrefix:
 secPrefix:
   - "Abschnitt"
   - "Abschnitten"
+
+print-bibliography: |
+   ::: {#refs}
+   :::
