@@ -470,14 +470,14 @@ $endif$
 \pagebreak
 $if(lof)$
 \iftotalfigures
-  \addcontentsline{toc}{section}{\listfigurename}
   \listoffigures
+  \addcontentsline{toc}{section}{\listfigurename}
 \fi
 $endif$
 $if(lot)$
 \iftotaltables
-  \addcontentsline{toc}{section}{\listtablename}
   \listoftables
+  \addcontentsline{toc}{section}{\listtablename}
 \fi
 $endif$
 $if(glossaryafter)$
