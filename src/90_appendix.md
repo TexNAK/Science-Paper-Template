@@ -1,17 +1,9 @@
-\pagebreak
-\pagenumbering{roman}
-\setcounter{page}{4}
-
-\section*{Literaturverzeichnis}
-\addcontentsline{toc}{section}{Literaturverzeichnis}
-
-<div id="refs"></div>
-
-\pagebreak
+\prepareappendix
+\printbibliography
 \appendix
-\section*{Appendix}
-\addcontentsline{toc}{section}{Appendix}
-\renewcommand{\thesubsection}{\Alph{subsection}}
+\shiftappendixnumbering
+
+# Anhang {-}
 
 ## Abbildungen
 
