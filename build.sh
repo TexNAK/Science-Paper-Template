@@ -3,7 +3,7 @@ OUTPUT_FOLDER="out"
 OUTPUT_FILE="${OUTPUT_FOLDER}/main"
 
 # Flags for pandoc
-PANDOC_INPUT="src/*.md"
+PANDOC_INPUT=$(find ./src/ -type f -name '*.md' -not -path '*/.*' | sort)
 FLAGS_PANDOC=$(cat .build/FlagsGeneral.txt)
 FLAGS_PDF="${FLAGS_PANDOC} $(cat .build/FlagsPDF.txt)"
 FLAGS_EPUB="${FLAGS_PANDOC} $(cat .build/FlagsEPUB.txt)"
