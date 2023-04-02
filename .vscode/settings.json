@@ -6,7 +6,7 @@
         "editor.acceptSuggestionOnEnter": "smart"
     },
     "files.exclude": {
-        ".*": true,  // all hidden files and directories in project root
+        ".*": true,
         "build.{sh,cmd}": true
     },
     "PandocCiter.DefaultBib": "src/bibliography.bib",
