@@ -1,6 +1,7 @@
 ---
     module: Transferleistung 1
     title: Optimierung der Build-Dauer eines Web Application Bundler durch Anpassung der Konfiguration und dessen Auswirkung auf den Entwicklungsprozess
+    keywords: [keyword1, keyword2]
 
     # For transfer papers leave author blank
     author: Max Mustermann
@@ -8,7 +9,12 @@
     centuria: A22f
     course-of-studies: Angewandte Informatik
 
-    keywords: [keyword1, keyword2]
+    # Sperrvermerk
+    confidential: false
+    place-of-jurisdiction: Elmshorn
+    submission-date: "01.01.1970"
+    company: PPI AG      # optional
+    retention-period: 2  # (in years, remove line if forever)
     
     # This can be replaced with any valid bibliography file (.yaml, .json, .bib)
     bibliography: src/bibliography.yaml

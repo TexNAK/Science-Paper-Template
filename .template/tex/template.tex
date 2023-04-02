@@ -436,11 +436,31 @@ $endif$
 \pagebreak
 $endif$
 
-\pagenumbering{roman}
 \pagestyle{fancy}
+\definecolor{nordakademie-blue}{RGB}{0,58,121}
 \lhead{\textcolor{nordakademie-blue}{\uppercase{$module$}}}
 \rhead{\textcolor{nordakademie-blue}{\includegraphics[height=1cm,keepaspectratio]{.template/logo_header.png}}}
 \cfoot{\thepage}
+
+$if(confidential)$
+\pagenumbering{gobble}
+\section*{Sperrvermerk}
+  Die vorliegende Hausarbeit mit dem Titel \textbf{"$title$"} $if(author)$von $author$$endif$
+  beinhaltet interne und vertrauliche Informationen $if(company)$der $company$$endif$.
+
+  Aus diesem Grund ist eine Einsicht in diese Hausarbeit nicht gestattet. \\
+  Ausgenommen davon sind die betreuenden Dozierenden sowie die befugten Mitglieder des Prüfungsausschusses.
+  $if(retention-period)$
+
+  Ich bin damit einverstanden, dass diese Hochschulschrift nach Ablauf von \textbf{$retention-period$ Jahren} ab Datum der Abgabe
+  ohne Rückfrage für die Öffentlichkeit freigegeben wird. 
+  $endif$
+
+  \hspace*{\fill} $place-of-jurisdiction$, $submission-date$
+\pagebreak
+$endif$
+
+\pagenumbering{roman}
 
 $for(include-before)$
 $include-before$
