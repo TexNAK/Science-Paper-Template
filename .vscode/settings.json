@@ -17,5 +17,6 @@
         "plaintext",
         "markdown"
     ],
-    "languageToolLinter.serviceType": "public"
+    "languageToolLinter.serviceType": "public",
+    "explorer.sortOrder": "mixed"
 }
