@@ -17,7 +17,7 @@
     retention-period: 2  # (in years, remove line if forever)
     
     # This can be replaced with any valid bibliography file (.yaml, .json, .bib)
-    bibliography: src/bibliography.yaml
+    bibliography: src/bibliography.bib
 ---
 
 # Possent ventis hanc delubra (+CPU)
